@@ -1,0 +1,9 @@
+environments:
+  first:
+    name: first
+    templateName: 'null-yossi-broken'
+  second:
+    name: firstRoot
+    templateName: 'null-yossi'
+    needs:
+      - first
