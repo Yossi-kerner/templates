@@ -2,6 +2,6 @@ version: 1
 
 deploy:
   onSuccess:
-    - echo success
+    - echo change
   onFailure:
     - echo failure
