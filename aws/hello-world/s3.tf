@@ -12,7 +12,7 @@ resource "aws_s3_bucket" "website_bucket" {
 }
 
 resource "aws_s3_bucket" "website_bucket_for_more_money" {
-  bucket = "hello-env0-yossi-${random_string.random.result}"
+  bucket = "hello-env0-yossi-money-${random_string.random.result}"
   force_destroy = true
 }
 
