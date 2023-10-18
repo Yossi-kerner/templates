@@ -11,6 +11,11 @@ resource "aws_s3_bucket" "website_bucket" {
   force_destroy = true
 }
 
+resource "aws_s3_bucket" "website_bucket_for_more_money" {
+  bucket = "hello-env0-yossi-${random_string.random.result}"
+  force_destroy = true
+}
+
 resource "aws_s3_bucket_website_configuration" "website_config" {
   bucket = aws_s3_bucket.website_bucket.id
 
