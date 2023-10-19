@@ -7,7 +7,7 @@ resource "random_string" "random" {
 }
 
 resource "aws_s3_bucket" "website_bucket" {
-  bucket = "hello-env0-yos-${random_string.random.result}"
+  bucket = "hello-env0-yo-${random_string.random.result}"
   force_destroy = true
 }
 
