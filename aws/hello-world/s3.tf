@@ -7,6 +7,11 @@ resource "random_string" "random" {
 }
 
 resource "aws_s3_bucket" "website_bucket" {
+  bucket = "hello-env0-${random_string.random.result}"
+  force_destroy = true
+}
+
+resource "aws_s3_bucket" "website_bucket_money" {
   bucket = "hello-env0-yossi-${random_string.random.result}"
   force_destroy = true
 }
