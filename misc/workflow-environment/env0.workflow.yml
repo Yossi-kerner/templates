@@ -18,6 +18,6 @@ environments:
     needs:
       - middleService1
       - middleService2
-  finalService2:
-    name: finalService2
+  finalService3:
+    name: finalService3
     templateName: 'null'
