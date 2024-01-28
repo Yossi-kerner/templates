@@ -4,8 +4,12 @@ resource "local_file" "test" {
 }
 
 resource "time_sleep" "wait_30_seconds" {
-  create_duration = "1s"
-  destroy_duration = "2s"
+  create_duration = "30s"
+  destroy_duration = "30s"
+}
+
+resource "null_resource" "this" {
+  depends_on = [time_sleep.wait]
 }
 
 resource "null_resource" "hever" {
