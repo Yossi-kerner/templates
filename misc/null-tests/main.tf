@@ -9,7 +9,7 @@ resource "time_sleep" "wait_30_seconds" {
 }
 
 resource "null_resource" "this" {
-  depends_on = [time_sleep.wait]
+  depends_on = [time_sleep.wait_30_seconds]
 }
 
 resource "null_resource" "hever" {
