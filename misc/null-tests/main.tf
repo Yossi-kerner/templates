@@ -25,6 +25,6 @@ variable "counter" {
 
 variable "instances" {
   default = [{
-    type = "t2.microsss"
+    type = "t2.micro"
   }]
 }
