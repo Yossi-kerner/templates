@@ -4,8 +4,8 @@ resource "local_file" "test" {
 }
 
 resource "time_sleep" "wait_seconds" {
-  create_duration = "10s"
-  destroy_duration = "10s"
+  create_duration = "2s"
+  destroy_duration = "2s"
 }
 
 resource "null_resource" "this" {
@@ -25,6 +25,6 @@ variable "counter" {
 
 variable "instances" {
   default = [{
-    type = "t2.microsss"
+    type = "t2.micro"
   }]
 }
