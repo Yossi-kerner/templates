@@ -4,8 +4,8 @@ resource "local_file" "test" {
 }
 
 resource "time_sleep" "wait_seconds" {
-  create_duration = "1s"
-  destroy_duration = "1s"
+  create_duration = "3s"
+  destroy_duration = "3s"
 }
 
 resource "null_resource" "this" {
