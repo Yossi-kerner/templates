@@ -3,13 +3,13 @@ resource "local_file" "test" {
   content  = "Hello world!"
 }
 
-resource "time_sleep" "wait_30_seconds" {
-  create_duration = "30s"
-  destroy_duration = "30s"
+resource "time_sleep" "wait_seconds" {
+  create_duration = "10s"
+  destroy_duration = "10s"
 }
 
 resource "null_resource" "this" {
-  depends_on = [time_sleep.wait_30_seconds]
+  depends_on = [time_sleep.wait_seconds]
 }
 
 resource "null_resource" "hever" {
