@@ -28,7 +28,5 @@ environments:
     needs:
       - C
       - D
-      - E
-      - F
 settings:
   environmentRemovalStrategy: destroy
