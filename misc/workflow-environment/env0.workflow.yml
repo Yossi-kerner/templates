@@ -43,4 +43,4 @@ environments:
       - E
       - F
 settings:
-	environmentRemovalStrategy: destroy
+  environmentRemovalStrategy: destroy
