@@ -23,13 +23,13 @@ environments:
       - B
   E:
     name: E
-    templateName: "null"
+    templateName: "null switch"
     workspace: 956868753149-e
     needs:
       - B
   F:
     name: F
-    templateName: "null"
+    templateName: "null switch"
     workspace: 956868753149-f
     needs:
       - B
