@@ -21,18 +21,6 @@ environments:
     workspace: 956868753149-d
     needs:
       - B
-  E:
-    name: C
-    templateName: "null"
-    workspace: 956868753149-e
-    needs:
-      - B
-  F:
-    name: D
-    templateName: "null"
-    workspace: 956868753149-f
-    needs:
-      - B
   G:
     name: G
     templateName: "null"
@@ -40,6 +28,4 @@ environments:
     needs:
       - C
       - D
-      - E
-      - F
  
