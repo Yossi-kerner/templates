@@ -21,18 +21,6 @@ environments:
     workspace: 956868753249-d
     needs:
       - B
-  E:
-    name: E
-    templateName: "null switch"
-    workspace: 956868753249-e
-    needs:
-      - B
-  F:
-    name: F
-    templateName: "null switch"
-    workspace: 956868753249-f
-    needs:
-      - B
   G:
     name: G
     templateName: "null"
@@ -40,7 +28,5 @@ environments:
     needs:
       - C
       - D
-      - E
-      - F
 settings:
   environmentRemovalStrategy: destroy
