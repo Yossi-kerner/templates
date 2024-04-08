@@ -1,5 +1,5 @@
 locals {
-  api_endpoint    = "https://dev.dev.env0.com"
+  api_endpoint    = "https://api-dev.dev.env0.com"
   env0_api_key    = "tn2w_74hud38vq7e"
   env0_api_secret = "qpgCRUSgCkaGyoO5dKV-SVR0uIOTzXaU"
   project_name    = "yossi"
