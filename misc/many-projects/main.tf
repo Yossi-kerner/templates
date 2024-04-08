@@ -29,7 +29,7 @@ output "organization_name" {
 
 resource "env0_project" "default_project" {
   name        = local.project_name
-  count       = 700
+  count       = 2500
   description = "Very Long DEscription, Very Long DEscription, Very Long DEscription ,Very Long DEscription ,Very Long DEscription ,Very Long DEscriptionVery Long DEscription, Very Long DEscription, Very Long DEscription ,Very Long DEscription ,Very Long DEscription ,Very Long DEscriptionVery Long DEscription, Very Long DEscription, Very Long DEscription ,Very Long DEscription ,Very Long DEscription ,Very Long DEscriptionVery Long DEscription, Very Long DEscription, Very Long DEscription ,Very Long DEscription ,Very Long DEscription ,Very Long DEscriptionVery Long DEscription, Very Long DEscription, Very Long DEscription ,Very Long DEscription ,Very Long DEscription ,Very Long DEscription"
 }
 
