@@ -1,7 +1,7 @@
 locals {
   api_endpoint    = "https://dev.dev.env0.com"
-  env0_api_key    = "icii2m5qwd9vzdzn"
-  env0_api_secret = "bA5-GJ86s1xj3k2zgQCUvwWxwBNV66Gq"
+  env0_api_key    = "tn2w_74hud38vq7e"
+  env0_api_secret = "qpgCRUSgCkaGyoO5dKV-SVR0uIOTzXaU"
   project_name    = "yossi"
   organization_id = "5591ba84-541e-45e5-a1dd-dc182addc5b2"
 }
