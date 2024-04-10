@@ -1,9 +1,9 @@
 locals {
-  api_endpoint    = "https://api-dev.dev.env0.com"
+  api_endpoint    = "https://api-pr15419.dev.env0.com"
   env0_api_key    = "tn2w_74hud38vq7e"
   env0_api_secret = "qpgCRUSgCkaGyoO5dKV-SVR0uIOTzXaU"
   project_name    = "yossi"
-  organization_id = "5591ba84-541e-45e5-a1dd-dc182addc5b2"
+  organization_id = "a1524685-0bd1-41ff-b468-cfa6128c739b"
 }
 
 terraform {
