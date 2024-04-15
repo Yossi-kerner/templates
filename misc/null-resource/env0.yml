@@ -1,6 +1,6 @@
 version: 1
 deploy:
   steps:
-    before:
-      after:
+    setupVariables:
+      before:
         - sleep 10
