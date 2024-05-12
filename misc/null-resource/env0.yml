@@ -5,7 +5,4 @@ destroy:
       before:
         - name: "Wait for the environment to be deleted"
           run: |
-            while true; do
-              echo "Running for nothing"
-              sleep 5
-            done
+            echo hello
