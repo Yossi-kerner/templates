@@ -4,5 +4,9 @@ variable "test" {
   default     = "default"
 }
 
+output "vpc_id" {
+  value: "TEST"
+}
+
 resource "null_resource" "null1" {
 }
