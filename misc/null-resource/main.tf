@@ -5,7 +5,7 @@ variable "test" {
 }
 
 output "vpc_id" {
-  value = "TEST"
+  value = "TEST1"
 }
 
 resource "null_resource" "null1" {
