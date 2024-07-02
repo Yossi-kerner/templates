@@ -2,10 +2,10 @@ data "terraform_remote_state" "example" {
   backend = "remote"
 
   config = {
-    hostname     = "backend.api.env0.com"
-    organization = "52e69ba9-1596-4565-89f5-9df45cc59ccb"
+    hostname     = "backend-pr16240.api.dev.env0.com"
+    organization = "37c52ad3-d171-411e-993e-1cc444806f56"
     workspaces = {
-      name = "env0f30c18"
+      name = "null-57180-37646142"
     }
   }
 }
