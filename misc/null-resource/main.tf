@@ -1,10 +1,10 @@
 terraform {
   cloud {
-    hostname = "backend.api.env0.com"
-    organization = "4fbca492-2d85-4fb9-bef2-e87582cd690e.4e7bdcfa-8aa4-4118-86f0-dc424c49395a"
+    hostname = "backend-pr16240.api.env0.com"
+    organization = "52e69ba9-1596-4565-89f5-9df45cc59ccb.0e757317-5a22-4ba5-97a8-1d45a17b56ca"
 
     workspaces {
-      name = "null-69611-45812066"
+      name = "env0f78252"
     }
   }
 }
