@@ -12,10 +12,8 @@ provider "env0" {
   api_endpoint = "https://api-dev.dev.env0.com"
 }
 
-resource "env0_environment" "example_with_hcl_configuration" {
+data "env0_environment" "example_with_hcl_configuration" {
   name        = "environment with hcl"
-  project_id  = "72002433-9307-40b5-bf28-67b37b12e296"
-  template_id = "1ce774a2-71ac-4047-8cb2-da09973af08a"
 }
 
 # resource "env0_configuration_variable" "example" {
