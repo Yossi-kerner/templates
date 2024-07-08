@@ -47,7 +47,7 @@ resource "env0_environment" "new_env" {
 #        }
 #      }
 #    EOF
-#     format = "text"
+#     format = "HCL"
 #   }
 # }
 #
