@@ -33,7 +33,7 @@ resource "env0_variable_set" "organization_scope_example" {
 }
 resource "env0_variable_set_assignment" "assignment" {
   scope    = "organization"
-  scope_id = data.env0_environment.example_with_hcl_configuration.id
+  scope_id = "4fbca492-2d85-4fb9-bef2-e87582cd690e"
   set_ids = [
     env0_variable_set.organization_scope_example.id,
   ]
