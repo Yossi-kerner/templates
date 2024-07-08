@@ -47,7 +47,7 @@ resource "env0_variable_set" "organization_scope_example" {
        }
      }
     EOF
-    format = "HCL"
+    format = "hcl"
   }
 }
 
