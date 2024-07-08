@@ -17,44 +17,44 @@ resource "env0_environment" "new_env" {
   project_id  = "72002433-9307-40b5-bf28-67b37b12e296"
   template_id = "1ce774a2-71ac-4047-8cb2-da09973af08a"
 
-  configuration {
+  # configuration {
+  #   name          = "TEST1234"
+  #   type          = "terraform"
+  #   value         = <<EOF
+  #     {
+  #       a = "world11111"
+  #       b = {
+  #         c = "d"
+  #       }
+  #     }
+  #   EOF
+  #   schema_format = "HCL"
+  # }
+}
+
+resource "env0_variable_set" "organization_scope_example" {
+  name        = "variable-set-example1"
+  description = "description123"
+
+  variable {
     name          = "TEST1234"
     type          = "terraform"
     value         = <<EOF
       {
         a = "world11111"
-        b = {
-          c = "d"
-        }
-      }
+       b = {
+         c = "d"
+       }
+     }
     EOF
-    schema_format = "HCL"
+    format = "HCL"
   }
 }
 
-# resource "env0_variable_set" "organization_scope_example" {
-#   name        = "variable-set-example1"
-#   description = "description123"# 
-#
-#   variable {
-#     name          = "TEST1234"
-#     type          = "terraform"
-#     value         = <<EOF
-#       {
-#         a = "world11111"
-#        b = {
-#          c = "d"
-#        }
-#      }
-#    EOF
-#     format = "HCL"
-#   }
-# }
-#
-# resource "env0_variable_set_assignment" "assignment" {
-#   scope    = "environment"
-#   scope_id = env0_environment.new_env.id
-#   set_ids = [
-#     env0_variable_set.organization_scope_example.id,
-#   ]
-# }
+resource "env0_variable_set_assignment" "assignment" {
+  scope    = "environment"
+  scope_id = env0_environment.new_env.id
+  set_ids = [
+    env0_variable_set.organization_scope_example.id,
+  ]
+}
