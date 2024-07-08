@@ -29,17 +29,10 @@ resource "env0_variable_set" "organization_scope_example" {
   description = "description123"
 
   variable {
-    name   = "n1"
-    value  = "v1"
+    name   = "ENVIRONMENT_VARIABLE_NAME"
+    value  = "example value"
     format = "text"
-  }
-
-  variable {
-    name         = "n1"
-    value        = "v2"
-    type         = "environment"
-    format       = "text"
-    is_sensitive = true
+    description = "Here you can fill description for this variable, note this field have limit of 255 chars"
   }
 }
 resource "env0_variable_set_assignment" "assignment" {
