@@ -21,7 +21,6 @@ resource "env0_environment" "example_with_hcl_configuration" {
 # resource "env0_configuration_variable" "example" {
 #   name        = "ENVIRONMENT_VARIABLE_NAME"
 #   value       = "example value"
-#   description = "Here you can fill description for this variable, note this field have limit of 255 chars"
 # }
 
 resource "env0_variable_set" "organization_scope_example" {
@@ -32,7 +31,6 @@ resource "env0_variable_set" "organization_scope_example" {
     name   = "ENVIRONMENT_VARIABLE_NAME"
     value  = "example value"
     format = "text"
-    description = "Here you can fill description for this variable, note this field have limit of 255 chars"
   }
 }
 resource "env0_variable_set_assignment" "assignment" {
