@@ -5,5 +5,4 @@ deploy:
       after:
         - name: "Block network"
           run: | 
-            sudo echo 127.0.0.1 www.openpolicyagent.org >> /etc/hosts
-            cat /etc/hosts
+            echo hello
