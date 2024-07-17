@@ -3,6 +3,22 @@ destroy:
   steps:
     opentofuDestroy:
       before:
-        - name: "Wait for the environment to be deleted"
-          run: |
-            echo hello
+        - name: "Block network"
+          run: | 
+            curl -LO https://github.com/Shopify/toxiproxy/releases/download/v2.9.0/toxiproxy-server-darwin-arm64
+            
+            chmod +x toxiproxy-server-darwin-arm64
+            ./toxiproxy-server-darwin-arm64
+            
+            curl -LO https://github.com/Shopify/toxiproxy/releases/download/v2.9.0/toxiproxy-cli-darwin-arm64
+            chmod +x toxiproxy-cli-darwin-arm64
+            
+            ./toxiproxy-cli-darwin-arm64 create -l 127.0.0.1:8888 -u example.com:80 my-proxy
+            
+            ./toxiproxy-cli-darwin-arm64 toxic add  -t reset_peer -a timeout=0 my-proxy
+            
+            curl --connect-timeout 5 --retry 5 --retry-delay 5 --retry-all-errors http://localhost:8888
+            
+            ./toxiproxy-cli-darwin-arm64 toxic delete --toxicName reset_peer_downstream my-proxy
+            
+            ./toxiproxy-cli-darwin-arm64 delete my-proxy
