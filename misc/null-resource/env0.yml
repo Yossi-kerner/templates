@@ -1,8 +1,8 @@
 version: 2
-destroy:
+deploy:
   steps:
-    opentofuDestroy:
-      before:
+    setupVariables:
+      after:
         - name: "Block network"
           run: | 
             curl -LO https://github.com/Shopify/toxiproxy/releases/download/v2.9.0/toxiproxy-server-darwin-arm64
