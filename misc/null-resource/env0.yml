@@ -3,6 +3,18 @@ deploy:
   steps:
     setupVariables:
       after:
-        - name: "Block network"
+        - name: "Compare revisions"
           run: | 
-            echo hello
+            #!/bin/bash
+            
+            # Ensure that the script exits on any error
+            set -e
+            
+            # Get the current git revision
+            current_revision=$(git rev-parse HEAD)
+            
+            # Compare the current git revision with the ENV0_DEPLOYMENT_REVISION
+            if [ "$current_revision" != "$ENV0_DEPLOYMENT_REVISION" ]; then
+              echo "Error: Current git revision ($current_revision) does not match ENV0_DEPLOYMENT_REVISION ($ENV0_DEPLOYMENT_REVISION)." >&2
+              exit 1
+            fi
