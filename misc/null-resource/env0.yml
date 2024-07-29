@@ -3,6 +3,6 @@ version: 2
 deploy:
   steps:
     terraformInit:
-      after:
+      before:
         - name: Pull state
-          run: terraform state pull
+          run: tofu state pull
