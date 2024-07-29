@@ -5,5 +5,4 @@ deploy:
     terraformInit:
       before:
         - name: Pull state
-          run: |
-            - terraform state pull
+          run: terraform state pull
