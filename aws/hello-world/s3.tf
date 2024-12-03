@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "logs_bucket" {
-  bucket = "logs-storage"
+  bucket = "demo-logs-storage"
   force_destroy = true
 }
 
