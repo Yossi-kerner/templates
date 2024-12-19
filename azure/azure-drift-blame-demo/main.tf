@@ -61,27 +61,18 @@ resource "azurerm_storage_blob" "index_html" {
       margin: 0;
       padding: 0;
       height: 100vh;
-      background: url('https://www.example.com/cat.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
+      background-color: #f4f4f9; /* Changed to a simple background color */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       text-align: center;
-      color: white;
+      color: #333;
       padding: 20px;
+      background: rgba(255, 255, 255, 0.8);
       border-radius: 10px;
-      background: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     h1 {
       font-size: 3.5em;
@@ -95,7 +86,6 @@ resource "azurerm_storage_blob" "index_html" {
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
   <div class="container">
     <h1>Hello, dear guest!</h1>
     <p>Welcome to my playground website hosted on Azure!</p>
@@ -103,15 +93,6 @@ resource "azurerm_storage_blob" "index_html" {
 </body>
 </html>
 HTML
-}
-
-# Upload Cat image (optional, if you want to store the image directly in Azure)
-resource "azurerm_storage_blob" "cat_image" {
-  name                   = "cat.jpg"
-  storage_account_name   = azurerm_storage_account.example.name
-  storage_container_name = "web"
-  type                   = "Block"
-  source                 = "path_to_your_local_cat_image.jpg" # Path to your local cat image (optional)
 }
 
 # Output the website URL
