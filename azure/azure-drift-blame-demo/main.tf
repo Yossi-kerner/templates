@@ -116,5 +116,6 @@ resource "azurerm_storage_blob" "cat_image" {
 
 # Output the website URL
 output "website_url" {
-  value = azurerm_storage_account_static_website.example.primary_web_endpoint
+  description = "The URL of the static website"
+  value       = "https://${azurerm_storage_account.example.name}.z6.web.core.windows.net/"
 }
