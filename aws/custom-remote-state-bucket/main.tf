@@ -6,11 +6,10 @@ module "remote_state_bucket" {
   source = "github.com/env0/remote-state-bucket-module/aws"
   
   # Module-specific inputs
-  external_id = "ddd43a98-e5a1-46a2-8748-397118c5dfe4"
-  bucket_name = "yossi-custom-bucket-for-remote-state"
-  region      = "us-west-2"
-  acl         = "private"
-  enable_versioning = true
+  external_id        = "ddd43a98-e5a1-46a2-8748-397118c5dfe4"
+  state_bucket_name  = "yossi-custom-bucket-for-remote-state"
+  region             = "us-west-2"
+  env0_aws_role_name = "arn:aws:iam::170412844252:role/remote-backend-dev"
 }
 
 output "bucket_name" {
