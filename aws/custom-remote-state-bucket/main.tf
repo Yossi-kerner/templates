@@ -15,3 +15,16 @@ module "remote_state_bucket" {
 output "bucket_name" {
   value = module.remote_state_bucket.bucket_name
 }
+
+output "role_arn" {
+  value = module.remote_state_bucket.role_arn
+}
+
+output "external_id" {
+  value = module.remote_state_bucket.external_id
+}
+
+output "region" {
+  value = module.remote_state_bucket.region
+}
+
