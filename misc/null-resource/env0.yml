@@ -1,0 +1,9 @@
+version: 2
+
+deploy:
+  steps:
+    terraformInit:
+      before:
+        - name: set WINSTON_DYNAMODB_DEBUG for debug logs
+          run: |
+            - export WINSTON_DYNAMODB_DEBUG=true
