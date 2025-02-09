@@ -5,5 +5,4 @@ deploy:
     terraformInit:
       before:
         - name: set WINSTON_DYNAMODB_DEBUG for debug logs
-          run: |
-            - export WINSTON_DYNAMODB_DEBUG=true
+          run: export WINSTON_DYNAMODB_DEBUG=true
