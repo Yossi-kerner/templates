@@ -4,5 +4,5 @@ deploy:
   steps:
     terraformInit:
       before:
-        - name: set WINSTON_DYNAMODB_DEBUG for debug logs
-          run: export WINSTON_DYNAMODB_DEBUG=true
+        - name: write a lot of logs
+          run: for i in {1..10000}; do echo "Yossi is the king $i"; done
