@@ -5,4 +5,4 @@ deploy:
     terraformInit:
       before:
         - name: write a lot of logs
-          run: for i in {1..10000}; do echo "Yossi is the king $i"; done
+          run: for i in {1..10000}; do echo "Yossi the king $i"; done
