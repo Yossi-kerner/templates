@@ -28,3 +28,7 @@ resource "azurerm_storage_account" "storage" {
     environment = "dev"
   }
 }
+
+output "backend_output" {
+  value = "test"
+}
