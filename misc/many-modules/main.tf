@@ -11,8 +11,8 @@ module "remote_module" {
 
 module "local_module" {
   source      = "./local_module"
-  instance_id = module.remote_module[0].instance_ids[0]  # Accessing the first instance ID in the list
-  public_ip   = module.remote_module[0].public_ips[0]    # Accessing the first public IP in the list
+  instance_id = module.remote_module[0].instance_id
+  public_ip   = module.remote_module[0].public_ip
 }
 
 output "instance_details" {
