@@ -2,9 +2,9 @@
 
 module "remote_module" {
   source  = "terraform-aws-modules/ec2-instance/aws"
-  version = "3.0.0"  # Ensure the correct version is used
+  version = "3.0.0"  # Specify the version of the module
   name    = "example-instance"
-  instance_count = 1
+  count   = 1  # Corrected: Use `count` instead of `instance_count`
   ami     = "ami-0c55b159cbfafe1f0"  # Replace with a valid AMI ID
   instance_type = "t2.micro"
 }
