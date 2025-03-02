@@ -27,7 +27,12 @@ resource "azurerm_network_interface" "example" {
   name                = "example-nic"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
-  subnet_id           = azurerm_subnet.example.id
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                    = azurerm_subnet.example.id  # Reference subnet here
+    private_ip_address_allocation = "Dynamic"  # Allocating private IP dynamically
+  }
 
   tags = {
     environment = "testing"
@@ -46,9 +51,9 @@ resource "azurerm_linux_virtual_machine" "example" {
   ]
 
   os_disk {
-    name              = "example-vm-osdisk"
-    caching           = "ReadWrite"
-    storage_account_type = "Standard_LRS"
+    name                     = "example-vm-osdisk"
+    caching                  = "ReadWrite"
+    storage_account_type     = "Standard_LRS"
   }
 
   tags = {
@@ -61,5 +66,5 @@ output "vm_id" {
 }
 
 output "public_ip" {
-  value = azurerm_network_interface.example.private_ip_address
+  value = azurerm_network_interface.example.private_ip_address  # Correct output for private IP
 }
