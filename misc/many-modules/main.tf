@@ -25,12 +25,12 @@ module "vpc_registry" {
 # --------- 3. Using a Module from an HTTP URL ---------
 # Using the terraform-aws-vpc module from GitHub as a .zip file
 
-module "vpc_http" {
-  source  = "https://github.com/terraform-aws-modules/terraform-aws-vpc/archive/refs/tags/v3.14.0.zip"  # Module as a ZIP from GitHub
-  cidr    = "10.3.0.0/16"
-  enable_dns_support = true
-  enable_dns_hostnames = true
-}
+# module "vpc_http" {
+#   source  = "https://github.com/terraform-aws-modules/terraform-aws-vpc/archive/refs/tags/v3.14.0.zip"  # Module as a ZIP from GitHub
+#   cidr    = "10.3.0.0/16"
+#   enable_dns_support = true
+#   enable_dns_hostnames = true
+# }
 
 # Example resources that use the outputs from the VPC modules
 
