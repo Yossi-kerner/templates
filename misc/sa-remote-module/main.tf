@@ -2,7 +2,8 @@ terraform {
   required_providers {
     azurerm = {
       source = "hashicorp/azurerm"
-      version = "~> 3.0"  # Ensure you're using a valid version of the azurerm provider
+      # Remove or relax the version constraint to let Terraform pick a compatible version
+      version = ">= 2.0.0"  # You can use a more general version constraint here
     }
   }
 }
