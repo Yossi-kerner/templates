@@ -2,10 +2,13 @@ terraform {
   required_providers {
     azurerm = {
       source = "hashicorp/azurerm"
-      # Remove or relax the version constraint to let Terraform pick a compatible version
-      version = ">= 2.0.0"  # You can use a more general version constraint here
+      version = ">= 2.0.0"  # Relax the version constraint as needed
     }
   }
+}
+
+provider "azurerm" {
+  features {}  # This is required to configure the provider
 }
 
 resource "random_id" "storage_account_prefix" {
