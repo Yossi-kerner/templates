@@ -1,44 +1,3 @@
-# remote_module/main.tf
-
-provider "azurerm" {
-  features {}
-}
-
-resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
-  location = "East US"
-}
-
-resource "azurerm_virtual_network" "example" {
-  name                = "example-vnet"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
-  address_space       = ["10.0.0.0/16"]
-}
-
-resource "azurerm_subnet" "example" {
-  name                 = "example-subnet"
-  resource_group_name  = azurerm_resource_group.example.name
-  virtual_network_name = azurerm_virtual_network.example.name
-  address_prefixes     = ["10.0.1.0/24"]
-}
-
-resource "azurerm_network_interface" "example" {
-  name                = "example-nic"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
-
-  ip_configuration {
-    name                          = "internal"
-    subnet_id                    = azurerm_subnet.example.id  # Reference subnet here
-    private_ip_address_allocation = "Dynamic"  # Allocating private IP dynamically
-  }
-
-  tags = {
-    environment = "testing"
-  }
-}
-
 resource "azurerm_linux_virtual_machine" "example" {
   name                = "example-vm"
   resource_group_name = azurerm_resource_group.example.name
@@ -56,15 +15,10 @@ resource "azurerm_linux_virtual_machine" "example" {
     storage_account_type     = "Standard_LRS"
   }
 
+  # Use the image ID directly
+  source_image_id = "/subscriptions/{subscription_id}/resourceGroups/{resource_group_name}/providers/Microsoft.Compute/images/{image_name}"
+
   tags = {
     environment = "testing"
   }
-}
-
-output "vm_id" {
-  value = azurerm_linux_virtual_machine.example.id
-}
-
-output "public_ip" {
-  value = azurerm_network_interface.example.private_ip_address  # Correct output for private IP
 }
