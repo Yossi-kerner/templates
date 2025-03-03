@@ -18,7 +18,3 @@ module "s3_bucket" {
   bucket = "my-unique-s3-bucket-name-yossi"  # Change to a globally unique name
   acl    = "private"
 }
-
-output "bucket_name" {
-  value = module.s3_bucket.bucket
-}
