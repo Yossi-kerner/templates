@@ -7,16 +7,17 @@ terraform {
     }
   }
 
-  # Define the remote module source
-  module "s3_bucket" {
-    source = "terraform-aws-modules/s3-bucket/aws"
-    bucket = "my-unique-s3-bucket-name-yossi" # Change to a globally unique name
-    acl    = "private"
-  }
+  # Optional: Set the backend configuration if needed (e.g., for remote state)
 }
 
 provider "aws" {
-  region = "us-east-1" # You can change this to your preferred region
+  region = "us-east-1"  # Set your AWS region here
+}
+
+module "s3_bucket" {
+  source = "terraform-aws-modules/s3-bucket/aws"
+  bucket = "my-unique-s3-bucket-name-yossi"  # Change to a globally unique name
+  acl    = "private"
 }
 
 output "bucket_name" {
