@@ -17,7 +17,7 @@ resource "random_id" "storage_account_prefix" {
 
 resource "azurerm_storage_account" "example" {
   name                     = "st${random_id.storage_account_prefix.hex}"  # Storage account name must be between 3 and 24 characters
-  resource_group_name       = "my_resource_group"
+  resource_group_name       = "env0-xlwibvgp-group"
   location                 = "East US"
   account_tier              = "Standard"
   account_replication_type = "LRS"  # Locally redundant storage (LRS)
