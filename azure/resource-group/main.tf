@@ -1,9 +1,6 @@
 provider "azurerm" {
   features {}
-  version = "4.22.0"
-}
-
-resource "null_resource" "null1" {
+  version = "3.116.0"
 }
 
 resource "random_string" "random" {
