@@ -2,6 +2,6 @@ version: 1
 
 deploy:
   steps:
-    setupVariables:
-      after:
+    opentofuInit:
+      before:
         - sleep 60 * 10
