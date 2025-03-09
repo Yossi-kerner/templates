@@ -4,4 +4,4 @@ deploy:
   steps:
     opentofuInit:
       before:
-        - sleep 60 * 10
+        - sleep 600
