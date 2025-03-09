@@ -1,7 +1,10 @@
 provider "azurerm" {
   features {}
-  version = "3.116.0"
+  version = "4.22.0"
+  subscription_id = "b48787a1-7145-425f-99af-62cde6c50e31"
 }
+
+resource "null_resource" "null" { }
 
 resource "random_string" "random" {
   length  = 8
