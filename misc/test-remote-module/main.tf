@@ -16,5 +16,4 @@ provider "aws" {
 module "s3_bucket" {
   source = "terraform-aws-modules/s3-bucket/aws"
   bucket = "my-unique-s3-bucket-name-yossi"  # Change to a globally unique name
-  acl    = "private"
 }
