@@ -14,7 +14,7 @@ provider "aws" {
 }
 
 module "s3_bucket" {
-  version = "3.15.2"
+  version = "2.15.0"
   source = "terraform-aws-modules/s3-bucket/aws"
   bucket = "my-unique-s3-bucket-name-yossi"  # Change to a globally unique name
 }
