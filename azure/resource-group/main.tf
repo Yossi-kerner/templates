@@ -6,6 +6,14 @@ terraform {
   }
 }
 
+variable "env0_api_key" {
+  type = string
+}
+
+variable "env0_api_secret" {
+  type = string
+}
+
 provider "azurerm" {
   features {}
   version = "3.116.0"
