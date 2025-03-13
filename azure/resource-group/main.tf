@@ -4,6 +4,11 @@ provider "azurerm" {
   subscription_id = "b48787a1-7145-425f-99af-62cde6c50e31"
 }
 
+provider "env0" {
+  api_key    = var.env0_api_key
+  api_secret = var.env0_api_secret
+}
+
 resource "random_string" "random" {
   length  = 8
   special = false
@@ -29,4 +34,9 @@ resource "azurerm_storage_account" "storage" {
   tags = {
     environment = "dev"
   }
+}
+
+resource "env0_project" "example" {
+  name        = "example"
+  description = "Example project"
 }
