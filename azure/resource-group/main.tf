@@ -53,3 +53,8 @@ resource "azurerm_storage_account" "storage" {
     environment = "dev"
   }
 }
+
+resource "env0_project" "example" {
+  name        = "example"
+  description = "Example project"
+}
