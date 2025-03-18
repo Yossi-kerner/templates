@@ -14,7 +14,7 @@ variable "test" {
 }
 
 output "vpc_id1" {
-  value = "new TEST2"
+  value = "TEST1"
 }
 
 resource "null_resource" "null1" {
