@@ -23,8 +23,6 @@ provider "azurerm" {
 provider "env0" {
   api_key    = var.env0_api_key
   api_secret = var.env0_api_secret
-  organization_id = "c88bc625-464e-4370-a599-65270334af3a"
-  api_endpoint = "https://api-pr18480.dev.env0.com"
 }
 
 resource "random_string" "random" {
