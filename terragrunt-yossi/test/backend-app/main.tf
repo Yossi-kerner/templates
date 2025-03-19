@@ -1,5 +1,7 @@
 provider "azurerm" {
-  version = "~> 1.15"
+  features {}
+  # version = "3.116.0"
+  subscription_id = "b48787a1-7145-425f-99af-62cde6c50e31"
 }
 
 resource "random_string" "random" {
