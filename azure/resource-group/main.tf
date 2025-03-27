@@ -16,7 +16,7 @@ variable "env0_api_secret" {
 
 provider "azurerm" {
   features {}
-  # version = "3.116.0"
+  version = "3.116.0"
   subscription_id = "b48787a1-7145-425f-99af-62cde6c50e31"
 }
 
