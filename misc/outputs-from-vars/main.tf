@@ -39,3 +39,7 @@ output "output_3" {
 output "output_4" {
   value = var.tf_variable_4
 }
+
+resource "null_resource" "test" {
+
+}
