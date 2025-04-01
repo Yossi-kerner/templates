@@ -1,29 +1,7 @@
-terraform {
-  required_providers {
-    env0 = {
-      source = "env0/env0"
-    }
-  }
-}
-
-variable "env0_api_key" {
-  type = string
-}
-
-variable "env0_api_secret" {
-  type = string
-}
-
 provider "azurerm" {
   features {}
   version = "3.116.0"
   subscription_id = "b48787a1-7145-425f-99af-62cde6c50e31"
-}
-
-provider "env0" {
-  api_key    = var.env0_api_key
-  api_secret = var.env0_api_secret
-  api_endpoint = "https://api-dev.dev.env0.com"
 }
 
 resource "random_string" "random" {
