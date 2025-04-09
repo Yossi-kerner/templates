@@ -1,19 +1,20 @@
-version: 1
+version: 2
 
 deploy:
   steps:
     setupVariables:
       after:
-        - npm i
-    pulumiLogin:
-      before:
-        - pulumi login $PULUMI_BACKEND_URL --non-interactive
+        - name: Run npm i
+          run: |
+            npm i
+        - name: pulumi login
+          run: |
+            pulumi login $PULUMI_BACKEND_URL --non-interactive
 
 destroy:
   steps:
     setupVariables:
       after:
-        - npm i
-    pulumiLogin:
-      before:
-        - pulumi login $PULUMI_BACKEND_URL --non-interactive
+        - name: Run npm i
+          run: |
+            npm i
