@@ -9,7 +9,7 @@ deploy:
             npm i
         - name: pulumi login
           run: |
-            pulumi login $PULUMI_BACKEND_URL --non-interactive
+            /home/node/.pulumi/bin/pulumi login $PULUMI_BACKEND_URL --non-interactive
 
 destroy:
   steps:
