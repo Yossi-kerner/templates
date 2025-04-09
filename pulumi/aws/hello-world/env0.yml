@@ -14,7 +14,6 @@ destroy:
     setupVariables:
       after:
         - npm i
-        - /home/node/.pulumi/bin/pulumi login $PULUMI_BACKEND_URL --non-interactive
     pulumiLogin:
       before:
-        - pulumi version
+        - pulumi login $PULUMI_BACKEND_URL --non-interactive
