@@ -7,7 +7,7 @@ deploy:
         - npm i
     pulumiLogin:
       before:
-        - pulumi version
+        - pulumi login $PULUMI_BACKEND_URL --non-interactive
 
 destroy:
   steps:
