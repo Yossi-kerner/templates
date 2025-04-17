@@ -1,8 +1,0 @@
-version: 2
-
-deploy:
-  steps:
-    terraformInit:
-      before:
-        - name: write a lot of logs
-          run: export DRIFT_CAUSE_FF=true
