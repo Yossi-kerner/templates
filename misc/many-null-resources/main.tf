@@ -1,5 +1,5 @@
 resource "null_resource" "bulk" {
-  count = 100000
+  count = 10000
 
   triggers = {
     id = count.index
