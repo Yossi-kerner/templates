@@ -23,5 +23,3 @@ environments:
     needs:
       - C
       - D
-settings:
-  environmentRemovalStrategy: destroy
