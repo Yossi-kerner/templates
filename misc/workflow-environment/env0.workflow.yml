@@ -2,29 +2,24 @@ environments:
   A:
     name: A
     templateName: "null"
-    workspace: 956868753249-a
   B:
     name: B
     templateName: "null"
-    workspace: 956868753249-b
     needs:
       - A
   C:
     name: C
     templateName: "null"
-    workspace: 956868753249-c
     needs:
       - B
   D:
     name: D
     templateName: "null"
-    workspace: 956868753249-d
     needs:
       - B
   G:
     name: G
     templateName: "null"
-    workspace: 956868753249-g
     needs:
       - C
       - D
