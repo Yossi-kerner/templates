@@ -12,16 +12,16 @@ environments:
     templateName: "null"
     needs:
       - B
-  D:
-    name: D
-    templateName: "null"
-    needs:
-      - B
-  G:
-    name: G
-    templateName: "null"
-    needs:
-      - C
-      - D
+  # D:
+  #   name: D
+  #   templateName: "null"
+  #   needs:
+  #     - B
+  # G:
+  #   name: G
+  #   templateName: "null"
+  #   needs:
+  #     - C
+  #     - D
 settings:
   environmentRemovalStrategy: destroy
