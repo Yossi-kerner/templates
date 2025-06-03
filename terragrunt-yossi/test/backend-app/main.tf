@@ -1,3 +1,8 @@
+variable "name_suffix" {
+  type    = string
+  default = "some-suffix"
+}
+
 provider "azurerm" {
   features {}
   # version = "3.116.0"
@@ -17,7 +22,7 @@ resource "azurerm_resource_group" "group" {
 
 # Free-tier Azure Storage Account
 resource "azurerm_storage_account" "storage" {
-  name                     = "st${random_string.random.result}"
+  name                     = "st${random_string.random.result}-${var.name_suffix}"
   resource_group_name       = azurerm_resource_group.group.name
   location                 = azurerm_resource_group.group.location
   account_tier              = "Standard"
