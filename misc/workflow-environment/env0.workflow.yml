@@ -1,27 +1,40 @@
 environments:
-  A:
-    name: A
+  db-dev:
+    name: db-dev-us-east-1
     templateName: "null"
-  B:
-    name: B
-    templateName: "null"
-    needs:
-      - A
-  C:
-    name: C
+  db-staging-us-east-1:
+    name: db-stg-us-east-1
     templateName: "null"
     needs:
-      - B
-  # D:
-  #   name: D
-  #   templateName: "null"
-  #   needs:
-  #     - B
-  # G:
-  #   name: G
-  #   templateName: "null"
-  #   needs:
-  #     - C
-  #     - D
-settings:
-  environmentRemovalStrategy: destroy
+      - db-dev
+  db-staging-us-west-1:
+    name: db-stg-us-west-1
+    templateName: "null"
+    needs:
+      - db-dev
+  db-prod-us-east-1:
+    name: db-prd-us-east-1
+    templateName: "null"
+    needs:
+      - db-staging-us-east-1
+  db-prod-us-east-2:
+    name: db-prd-us-east-2
+    templateName: "null"
+    needs:
+      - db-staging-us-east-1
+  db-prod-us-west-1:
+    name: db-prd-us-west-1
+    templateName: "null"
+    needs:
+      - db-staging-us-west-1
+  db-prod-us-west-2:
+    name: db-prd-us-west-2
+    templateName: "null"
+    needs:
+      - db-staging-us-west-1
+  db-prod-us-ap-south-1:
+    name: db-prd-ap-south-1
+    templateName: "null"
+    needs:
+      - db-staging-us-east-1
+      - db-staging-us-west-1
