@@ -18,4 +18,5 @@ data "vault_kv_secret" "myapp_config" {
 
 output "myapp_password" {
   value = data.vault_kv_secret.myapp_config.data["passcode"]
+  sensitive = true
 }
