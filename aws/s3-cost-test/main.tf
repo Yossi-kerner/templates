@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "example" {
-  bucket = "my-unique-bucket-name-123456-yossi-kerner-2"
+  bucket = "my-unique-bucket-name-123456-yossi-kerner-2-1"
   acl    = "private"
 
   tags = {
