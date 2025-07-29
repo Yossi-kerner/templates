@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "example" {
-  bucket = "my-unique-bucket-name-123456" # Change this to a globally unique bucket name
+  bucket = "my-unique-bucket-name-123456-yossi-kerner"
   acl    = "private"
 
   tags = {
