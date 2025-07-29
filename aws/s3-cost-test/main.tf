@@ -1,0 +1,13 @@
+provider "aws" {
+  region = "us-east-1" # You can change the region as needed
+}
+
+resource "aws_s3_bucket" "example" {
+  bucket = "my-unique-bucket-name-123456" # Change this to a globally unique bucket name
+  acl    = "private"
+
+  tags = {
+    Name        = "MyBucket"
+    Environment = "Dev"
+  }
+}
