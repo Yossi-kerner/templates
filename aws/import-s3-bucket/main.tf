@@ -12,10 +12,5 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "yossi_test_new" {
-  bucket = "yossi-test-new"
-}
-
-import {
-  id = "yossi-test-new"
-  to = aws_s3_bucket.yossi_test_new
+  bucket = "yossi-test-new-2"
 }
