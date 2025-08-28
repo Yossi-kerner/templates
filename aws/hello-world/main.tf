@@ -7,6 +7,8 @@ terraform {
   required_version = ">= 0.13"
 }
 
+resource "random_uuid" "uuid" { }
+
 resource "tls_private_key" "private_key" {
   algorithm = "RSA"
   rsa_bits  = 4096
