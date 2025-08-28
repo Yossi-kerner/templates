@@ -1,40 +1,40 @@
 environments:
   db-dev:
     name: db-dev-us-east-1
-    templateName: "db-dev"
+    templateName: "aws hello world"
   db-staging-us-east-1:
     name: db-stg-us-east-1
-    templateName: "db-staging"
+    templateName: "aws hello world"
     needs:
       - db-dev
   db-staging-us-west-1:
     name: db-stg-us-west-1
-    templateName: "db-staging"
+    templateName: "aws hello world"
     needs:
       - db-dev
   db-prod-us-east-1:
     name: db-prd-us-east-1
-    templateName: "db-prod"
+    templateName: "aws hello world"
     needs:
       - db-staging-us-east-1
   db-prod-us-east-2:
     name: db-prd-us-east-2
-    templateName: "db-prod"
+    templateName: "aws hello world"
     needs:
       - db-staging-us-east-1
   db-prod-us-west-1:
     name: db-prd-us-west-1
-    templateName: "db-prod"
+    templateName: "aws hello world"
     needs:
       - db-staging-us-west-1
   db-prod-us-west-2:
     name: db-prd-us-west-2
-    templateName: "db-prod"
+    templateName: "aws hello world"
     needs:
       - db-staging-us-west-1
   db-prod-us-ap-south-1:
     name: db-prd-ap-south-1
-    templateName: "db-prod"
+    templateName: "aws hello world"
     needs:
       - db-staging-us-east-1
       - db-staging-us-west-1
