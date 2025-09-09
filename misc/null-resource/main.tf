@@ -17,5 +17,9 @@ output "vpc_id1" {
   value = "TEST2"
 }
 
+output "vpc_id2" {
+  value = "TEST2"
+}
+
 resource "null_resource" "null1" {
 }
