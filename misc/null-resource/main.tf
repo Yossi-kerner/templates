@@ -17,5 +17,10 @@ output "vpc_id1" {
   value = "TEST2"
 }
 
+output "sensitive_vpc_id1" {
+  value = "TEST2_SECRET"
+  sensitive = true
+}
+
 resource "null_resource" "null1" {
 }
