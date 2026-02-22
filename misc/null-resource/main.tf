@@ -31,7 +31,9 @@ terraform {
 
 # You must initialize them (even with dummy data) to force the download
 provider "aws" { region = "us-east-1" }
-provider "azurerm" { features {} }
+provider "azurerm" { 
+  features {} 
+}
 provider "google" { project = "qa-test" }
 
 resource "null_resource" "heavy_dir" {
