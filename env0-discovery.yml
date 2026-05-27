@@ -1,9 +1,1 @@
-environments:
-  qaEng1703:
-    name: "QA ENG-1703 Env"
-    projectId: "abad5947-338d-4e26-ad3f-2f8bf62a9210"
-    templateId: "89d0d606-e009-4f21-b52b-571677b4205a"
-  qaEng1703Two:
-    name: "QA ENG-1703 Env 2"
-    projectId: "abad5947-338d-4e26-ad3f-2f8bf62a9210"
-    templateId: "89d0d606-e009-4f21-b52b-571677b4205a"
+environments: {}
