@@ -36,6 +36,13 @@ provider "azurerm" {
 }
 provider "google" { project = "qa-test" }
 
+# Consumes the "test/test" module from the env0 private module registry,
+# exercising the /modules/v1/.../download endpoint during terraform init.
+module "registry_test" {
+  source  = "api-dev.dev.env0.com/f0d9aced-99cf-4dfd-a17f-375d29bc3ca7/test/test"
+  version = "2.0.0"
+}
+
 resource "null_resource" "heavy_dir" {
   provisioner "local-exec" {
     command = "echo 'Providers loaded for QA'"
