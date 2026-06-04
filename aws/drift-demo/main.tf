@@ -10,6 +10,7 @@ resource "aws_s3_bucket" "drift_demo" {
     ManagedBy = "env0"
     Owner     = var.owner
     Purpose   = "drift-detection-demo"
+    Team      = "security"
   }
 }
 
