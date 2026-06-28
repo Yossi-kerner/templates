@@ -14,7 +14,8 @@ Because `dependent` must resolve `base`'s outputs, destroy order matters:
   then `dependent` fails to resolve `dependency.base.outputs.base_id` with
   `detected no outputs`.
 
-`mock_outputs` is allowed only for the read-only / pre-apply commands
-(`init`, `validate`, `plan`, `workspace`, `output`) so the initial deploy works before
-`base` exists, but `apply`/`destroy` are excluded — so a wrong-order destroy still fails,
-making the fix observable. No cloud credentials are required (everything is `null_resource`).
+`mock_outputs` is set (and allowed for all commands) because env0 manages remote state, so
+Terragrunt can't read a dependency's real outputs during its config-resolution phase. The
+mock only affects output *values* — the dependency edge still forces ordering: forward on
+deploy (`base` → `dependent`), reverse on destroy (`dependent` → `base`). No cloud
+credentials are required (everything is `null_resource`).

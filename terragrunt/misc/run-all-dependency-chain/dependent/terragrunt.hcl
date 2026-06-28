@@ -1,13 +1,13 @@
 dependency "base" {
   config_path = "../base"
 
-  # mock_outputs let the initial deploy resolve `dependency.base.outputs` before `base`
-  # exists. The list excludes apply/destroy on purpose: a wrong-order (forward) destroy
-  # tears `base` down first, so resolving this dependency then fails with
-  # "detected no outputs" - exactly the APO-117 bug. Reverse order destroys `dependent`
-  # first while `base` still has outputs, so it succeeds.
-  mock_outputs                            = { base_id = "mock-base-id" }
-  mock_outputs_allowed_terraform_commands = ["init", "validate", "plan", "workspace", "output"]
+  # env0 manages remote state, so Terragrunt can't read a dependency's real outputs during
+  # its config-resolution phase; mock_outputs is required for the run to resolve at all.
+  # Allowed for every command (no mock_outputs_allowed_terraform_commands restriction) so
+  # both deploy and destroy resolve. The dependency edge still forces ordering: forward on
+  # deploy (base -> dependent), reverse on destroy (dependent -> base) - which is what the
+  # APO-117 fix produces.
+  mock_outputs = { base_id = "mock-base-id" }
 }
 
 # Consume the dependency output so Terragrunt must read `base`'s state on every run
