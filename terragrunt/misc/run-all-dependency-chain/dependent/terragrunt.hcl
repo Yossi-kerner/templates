@@ -7,7 +7,7 @@ dependency "base" {
   # exactly the APO-117 bug. Reverse order destroys `dependent` first while `base` still
   # has outputs, so it succeeds.
   mock_outputs                            = { base_id = "mock-base-id" }
-  mock_outputs_allowed_terraform_commands = ["plan", "validate"]
+  mock_outputs_allowed_terraform_commands = ["init", "validate", "plan", "workspace", "output"]
 }
 
 inputs = {
