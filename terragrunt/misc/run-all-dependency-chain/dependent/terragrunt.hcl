@@ -1,27 +1,21 @@
+include {
+  path = find_in_parent_folders()
+}
+
+# Depends on `base` and consumes its output, so Terragrunt must read base's state on every
+# run. The dependency edge forces ordering: forward on deploy (base -> dependent), reverse
+# on destroy (dependent -> base) - which is the APO-117 fix.
 dependency "base" {
   config_path = "../base"
 
-  # env0 manages remote state, so Terragrunt can't read a dependency's real outputs during
-  # its config-resolution phase; mock_outputs is required for the run to resolve at all.
-  # Allowed for every command (no mock_outputs_allowed_terraform_commands restriction) so
-  # both deploy and destroy resolve. The dependency edge still forces ordering: forward on
-  # deploy (base -> dependent), reverse on destroy (dependent -> base) - which is what the
-  # APO-117 fix produces.
-  mock_outputs = { base_id = "mock-base-id" }
+  # env0 manages remote state, so the real outputs aren't readable during Terragrunt's
+  # config-resolution phase; the mock lets every command resolve. It only affects the
+  # output *value*, not the ordering edge.
+  mock_outputs = { id = "mock-id" }
 }
 
-# Consume the dependency output so Terragrunt must read `base`'s state on every run
-# (this is what makes destroy ordering matter). It is intentionally NOT declared as a
-# Terraform variable below, so OpenTofu ignores the value instead of consistency-checking
-# it against env0's saved run-all plan (which would otherwise fail on the mock->real change).
+# Consumed as an input (not declared as a TF variable below), so OpenTofu ignores the value
+# instead of consistency-checking it against env0's saved run-all plan.
 inputs = {
-  base_id = dependency.base.outputs.base_id
-}
-
-generate "main" {
-  path      = "tg.main.tf"
-  if_exists = "overwrite_terragrunt"
-  contents  = <<EOF
-resource "null_resource" "dependent" {}
-EOF
+  base_id = dependency.base.outputs.id
 }

@@ -1,21 +1,24 @@
 # run-all-dependency-chain
 
-A minimal Terragrunt `run --all` fixture with a real cross-unit dependency, used to
-QA destroy ordering (env0 APO-117).
+A minimal Terragrunt `run --all` fixture with a real cross-unit dependency, used to QA
+destroy ordering (env0 APO-117).
 
-- `base/` — creates a `null_resource` and exposes a `base_id` output.
-- `dependent/` — declares `dependency "base"` and consumes `base_id` via `inputs`.
+Layout mirrors env0's canonical run-all fixture (root `terragrunt.hcl` with a shared
+`generate`, children `include` it) so env0 round-trips state between deploy and destroy:
 
-Because `dependent` must resolve `base`'s outputs, destroy order matters:
+- `terragrunt.hcl` (root) — generates `null_resource.this` and an `id` output for every unit.
+- `base/` — includes the root.
+- `dependent/` — includes the root and declares `dependency "base"`, consuming its `id`.
 
-- **Reverse order (correct):** `dependent` is destroyed first while `base` still has
-  outputs, then `base` — succeeds.
-- **Forward order (the bug):** `base` is destroyed first, its state/outputs are gone,
-  then `dependent` fails to resolve `dependency.base.outputs.base_id` with
-  `detected no outputs`.
+Because `dependent` depends on `base`, ordering matters:
 
-`mock_outputs` is set (and allowed for all commands) because env0 manages remote state, so
-Terragrunt can't read a dependency's real outputs during its config-resolution phase. The
-mock only affects output *values* — the dependency edge still forces ordering: forward on
-deploy (`base` → `dependent`), reverse on destroy (`dependent` → `base`). No cloud
-credentials are required (everything is `null_resource`).
+- **Deploy** runs forward: `base` before `dependent`.
+- **Destroy** runs reverse: `dependent` before `base` — which is what the APO-117 fix
+  produces (`terragrunt run --all -- destroy`, not `-- apply`).
+
+Notes:
+- `mock_outputs` is set because env0-managed remote state can't be read during Terragrunt's
+  config-resolution phase; it only affects output *values*, not the ordering edge.
+- `base_id` is passed via `inputs` but intentionally not declared as a TF variable, so
+  OpenTofu doesn't consistency-check it against env0's saved run-all plan.
+- No cloud credentials are required (everything is `null_resource`).
