@@ -2,12 +2,16 @@ environments:
   alias-a:
     name: apo398-node-a
     templateName: apo398-a
+    revision: master
   alias-b:
     name: apo398-node-b
     templateName: apo398-b
+    revision: master
   alias-c:
     name: apo398-node-c
     templateName: apo398-c
+    revision: master
   alias-d:
     name: apo398-node-d
     templateName: apo398-d
+    revision: master
