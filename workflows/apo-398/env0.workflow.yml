@@ -2,48 +2,60 @@ environments:
   alias-01:
     name: apo398-many-01
     templateName: apo398-a
+    revision: master
     workspace: apo398-many-01
   alias-02:
     name: apo398-many-02
     templateName: apo398-a
+    revision: master
     workspace: apo398-many-02
   alias-03:
     name: apo398-many-03
     templateName: apo398-a
+    revision: master
     workspace: apo398-many-03
   alias-04:
     name: apo398-many-04
     templateName: apo398-a
+    revision: master
     workspace: apo398-many-04
   alias-05:
     name: apo398-many-05
     templateName: apo398-a
+    revision: master
     workspace: apo398-many-05
   alias-06:
     name: apo398-many-06
     templateName: apo398-a
+    revision: master
     workspace: apo398-many-06
   alias-07:
     name: apo398-many-07
     templateName: apo398-a
+    revision: master
     workspace: apo398-many-07
   alias-08:
     name: apo398-many-08
     templateName: apo398-a
+    revision: master
     workspace: apo398-many-08
   alias-09:
     name: apo398-many-09
     templateName: apo398-a
+    revision: master
     workspace: apo398-many-09
   alias-10:
     name: apo398-many-10
     templateName: apo398-a
+    revision: master
     workspace: apo398-many-10
   alias-11:
     name: apo398-many-11
     templateName: apo398-a
+    revision: master
     workspace: apo398-many-11
   alias-12:
     name: apo398-many-12
     templateName: apo398-a
+    revision: master
     workspace: apo398-many-12
