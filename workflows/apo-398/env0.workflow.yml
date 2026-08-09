@@ -1,0 +1,12 @@
+environments:
+  alias-a:
+    name: apo398-node-a
+    templateName: apo398-a
+    requiresApproval: false
+  alias-b:
+    name: apo398-node-b
+    templateName: apo398-b
+    requiresApproval: true
+  alias-c:
+    name: apo398-node-c
+    templateName: apo398-c
