@@ -1,0 +1,17 @@
+environments:
+  vcs-a:
+    name: apo398-vcs-a
+    vcs:
+      type: terraform
+      repository: https://github.com/Yossi-kerner/templates
+      path: misc/null-resource
+      revision: master
+    workspace: apo398-vcs-a
+  vcs-b:
+    name: apo398-vcs-b
+    vcs:
+      type: terraform
+      repository: https://github.com/Yossi-kerner/templates
+      path: misc/null-resource
+      revision: master
+    workspace: apo398-vcs-b
