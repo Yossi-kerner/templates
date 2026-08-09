@@ -7,6 +7,7 @@ environments:
       repository: https://github.com/env0/templates
       path: misc/null-resource
       revision: master
+      terraformVersion: latest
     workspace: apo398-vcs-a
   vcs-b:
     name: apo398-vcs-b
@@ -16,4 +17,5 @@ environments:
       repository: https://github.com/env0/templates
       path: misc/null-resource
       revision: master
+      terraformVersion: latest
     workspace: apo398-vcs-b
