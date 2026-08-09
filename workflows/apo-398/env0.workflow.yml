@@ -2,8 +2,10 @@ environments:
   dup-a:
     name: apo398-dup-a
     templateName: apo398-a
+    revision: master
     workspace: apo398-dup
   dup-b:
     name: apo398-dup-b
     templateName: apo398-a
+    revision: master
     workspace: apo398-dup
