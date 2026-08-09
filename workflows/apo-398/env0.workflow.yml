@@ -1,0 +1,9 @@
+settings:
+  environmentRemovalStrategy: destroy
+environments:
+  alias-a:
+    name: apo398-node-a
+    templateName: apo398-a
+  alias-b:
+    name: apo398-node-b
+    templateName: apo398-b
