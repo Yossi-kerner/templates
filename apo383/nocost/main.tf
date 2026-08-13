@@ -35,7 +35,7 @@ resource "aws_iam_role" "qa" {
   })
 
   tags = {
-    Owner  = "qa"
+    Owner  = "qa-a1"
     Ticket = "APO-383"
   }
 }
@@ -53,7 +53,7 @@ resource "aws_iam_policy" "qa" {
   })
 
   tags = {
-    Owner  = "qa"
+    Owner  = "qa-a1"
     Ticket = "APO-383"
   }
 }
